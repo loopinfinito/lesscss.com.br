@@ -62,8 +62,8 @@ As propriedades da classe `.bordered` agora v&atilde;o aparecer tanto em `#menu 
 
 Qualquer ruleset CSS do tipo *classe* ou *id* pode ser usado como mixin desta forma.
 
-Mixins Param&eacute;tricos
--------------------
+Mixins com Par&acirc;metros
+---------------------------
 
 LESS possui um tipo especial de ruleset que pode ser usado como mixin, como as classes, mas que aceitam par&acirc;metros. Este &eacute; o exemplo can&ocirc;nico:
 
@@ -382,7 +382,7 @@ E s&atilde;o obrigat&oacute;rios em valores compostos:
 
     border: (@width * 2) solid black;
 
-Func&otilde;es de cores
+Fun&ccedil;&otilde;es de cor
 ----------------
 
 LESS fornece uma variedade de fun&ccedil;&otilde;es que transformam cores. Cores s&atilde;o primeiramente convertidas para
