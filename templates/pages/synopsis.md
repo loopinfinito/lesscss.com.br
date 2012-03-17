@@ -1,8 +1,8 @@
-Variables
+Variáveis
 ---------
 
-Variables allow you to specify widely used values in a single place, and then re-use them throughout the style sheet,
-making global changes as easy as changing one line of code.
+Variáveis permitem que você especifique valores amplamente utilizados em apenas um local, possibilitando assim reutilizá-las por toda sua folha de estilos,
+realizando mudanças globais de maneira tão fácil como alterar apenas uma linha de código.
 
 <table class="code-example" cellpadding="0">
   <tr><td>
@@ -18,7 +18,7 @@ h2 {
   color: @color;
 }</code></pre>
   </td><td>
-  <pre class="css-output"><code>/* Compiled CSS */
+  <pre class="css-output"><code>/* CSS Compilado */
 
 #header {
   color: #4D926F;
@@ -32,10 +32,10 @@ h2 {
 Mixins
 ------
 
-Mixins allow you to embed all the properties of a class into another class by
-simply including the class name as one of its properties. It's just like variables,
-but for whole classes. Mixins can also behave like functions, and take arguments,
-as seen in the example bellow.
+Mixins permitem que você adicione todas as propriedades de uma classe em outra classe
+simplesmente incluindo o nome da classe como uma de suas propriedades. Assim como variáveis,
+mas para classes completas. Mixins também podem se comportar com funções, e receber argumentos,
+como mostrado no exemplo abaixo.
 
 <table class="code-example" cellpadding="0">
   <tr><td>
@@ -55,7 +55,7 @@ as seen in the example bellow.
 }</code></pre></td>
 
 <td>
-  <pre class="css-output"><code>/* Compiled CSS */
+  <pre class="css-output"><code>/* CSS Compilado */
 
 #header {
   border-radius: 5px;
@@ -70,12 +70,12 @@ as seen in the example bellow.
   </td></tr>
 </table>
 
-Nested Rules
-------------
+Regras Aninhadas
+----------------
 
-Rather than constructing long selector names to specify inheritance,
-in Less you can simply nest selectors inside other selectors.
-This makes inheritance clear and style sheets shorter.
+Ao invés de construir longos nomes de seletores para especificar herança,
+em Less você pode simplesmente aninhar seletores dentro de outros seletores.
+Isto faz com que a herança fique mais clara e as folhas de estilos menores.
 
 <table class="code-example" cellpadding="0">
   <tr><td>
@@ -97,7 +97,7 @@ This makes inheritance clear and style sheets shorter.
 </code></pre></td>
 
 <td>
-  <pre class="css-output"><code>/* Compiled CSS */
+  <pre class="css-output"><code>/* CSS Compilado */
 
 #header h1 {
   font-size: 26px;
@@ -117,14 +117,14 @@ This makes inheritance clear and style sheets shorter.
   </td></tr>
 </table>
 		
-Functions & Operations
-----------------------
+Funções & Operações
+-------------------
 
-Are some elements in your style sheet proportional to other elements?
-Operations let you add, subtract, divide and multiply property values and colors,
-giving you the power to create complex relationships between properties.
-Functions map one-to-one with JavaScript code, allowing you to manipulate values however
-you want.
+Alguns elementos de sua folha de estilo são proporcionais a outros elementos?
+Operações permitem que você some, subtraia, divida e multiplique valores de propriedades e cores,
+dando a você o poder de criar relações complexas entre propriedades.
+Funções mapeam de um-para-um com código JavaScript, permitindo a você manipular valores
+como quiser.
 
 <table class="code-example" cellpadding="0">
   <tr><td>
@@ -148,7 +148,7 @@ you want.
 </code></pre></td>
 
 <td>
-  <pre class="css-output"><code>/* Compiled CSS */
+  <pre class="css-output"><code>/* CSS Compilado */
 
 #header {
   color: #333;
