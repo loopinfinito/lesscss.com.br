@@ -1,4 +1,4 @@
-Referência
+Referencia
 ==========
 
 Teste
@@ -16,7 +16,7 @@ Modo watch
     $ vows -w
     $ vows --watch
 
-### Opções #
+### Opcoes #
 
 <table cellspacing="10">
   <tr>
