@@ -1,4 +1,4 @@
-Referencia
+Refer&ecirc;ncia
 ==========
 
 Teste
@@ -16,36 +16,36 @@ Modo watch
     $ vows -w
     $ vows --watch
 
-### Opcoes #
+### Op&ccedil;&otilde;es #
 
 <table cellspacing="10">
   <tr>
     <td><code>-v</code>, <code>--verbose</code></td>
-    <td>Verbose mode</td>
+    <td>Modo Verboso</td>
   </tr>
   <tr>
     <td><code>-w</code>, <code>--watch</code></td>
-    <td>Watch mode</td>
+    <td>Modo watch</td>
   </tr>
   <tr>
     <td><code>-m STRING</code></td>
-    <td>String matching: Only run tests with <code>STRING</code> in their title</td>
+    <td>Correspond&ecirc;ncia de string: Apenas roda testes com <code>STRING</code> em seu t&iacute;tulo</td>
   </tr>
   <tr>
     <td><code>-r REGEXP</code></td>
-    <td>Regexp matching: Only run tests with <code>REGEXP</code> in their title</td>
+    <td>Correspond&ecirc;ncia de regexp: Apenas roda testes com <code>REGEXP</code> em seu t&iacute;tulo</td>
   </tr>
   <tr>
     <td><code>--json</code></td>
-    <td>Use JSON reporter</td>
+    <td>Usa o JSON reporter</td>
   </tr>
   <tr>
     <td><code>--spec</code></td>
-    <td>Use Spec reporter</td>
+    <td>Usa o Spec reporter</td>
   </tr>
   <tr>
     <td><code>--dot-matrix</code></td>
-    <td>Use Dot-Matrix reporter</td>
+    <td>Usa o Dot-Matrix reporter</td>
   </tr>
   <!-- <tr> -->
   <!--   <td><code>-no-color</code></td> -->
@@ -53,22 +53,22 @@ Modo watch
   <!-- </tr> -->
   <tr>
     <td><code>--version</code></td>
-    <td>Show version</td>
+    <td>Mostra a vers&atilde;o</td>
   </tr>
   <tr>
     <td><code>-s</code>, <code>--silent</code></td>
-    <td>Don't report</td>
+    <td>N&atilde; reporta</td>
   </tr>
   <tr>
     <td><code>--help</code></td>
-    <td>Show help</td>
+    <td>Mostra ajuda</td>
   </tr>
 </table>
 
-Assertion functions
+Fun&ccedil;&otilde;es de declara&ccedil;&atilde;o
 -------------------
 
-### equality #
+### igualdade #
 
     assert.equal          (4, 4);
     assert.strictEqual    (4 > 2, true);
@@ -76,7 +76,7 @@ Assertion functions
     assert.notEqual       (4, 2);
     assert.strictNotEqual (1, true);
 
-### type #
+### tipo #
 
     assert.isFunction (function () {});
     assert.isObject   ({goo:true});
@@ -88,7 +88,7 @@ Assertion functions
     assert.typeOf     (42, 'number');
     assert.instanceOf ([], Array);
 
-### truth #
+### booleano #
 
     assert.isTrue  (true);
     assert.isFalse (false);
@@ -101,28 +101,28 @@ Assertion functions
     assert.isUndefined ('goo'[9]);
     assert.isNaN       (0/0);
 
-### inclusion #
+### inclus&atilde;o #
 
     assert.include ([4, 2, 0], 2);
     assert.include ({goo:true}, 'goo');
     assert.include ('goo', 'o');
 
-### regexp matching #
+### correspond&ecirc;ncia regexp #
 
     assert.match ('hello', /^[a-z]+/);
 
-### length #
+### tamanho #
 
     assert.length ([4, 2, 0], 3);
     assert.length ('goo', 3);
 
-### emptiness #
+### vazio #
 
     assert.isEmpty ([]);
     assert.isEmpty ({});
     assert.isEmpty ("");
 
-### exceptions #
+### exce&ccedil;&atilde;o #
 
 - assert.throws
 - assert.doesNotThrow
