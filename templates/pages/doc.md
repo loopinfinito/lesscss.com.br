@@ -246,7 +246,7 @@ A lista completa de operadores de compara&ccedil;&atilde;o usadas nos guards s&a
 Qualquer outro valor que n&atilde;o seja a palavra reservada `true` &eacute; falso em uma compara&ccedil;&atilde;o:
 
     .class {
-      .truth(40); // Não irá dar match em nenhuma das definições acima.
+      .truth(40); // N&atilde;o ir&aacute; dar match em nenhuma das defini&ccedil;&otilde;es acima.
     }
 
 Guards tamb&eacute;m pode ser separados por v&iacute;rgula "`,`"--se algum guard for avaliado como verdadeiro, ent&atilde;o &eacute; dado o match:
@@ -388,8 +388,8 @@ Func&otilde;es de cores
 LESS fornece uma variedade de fun&ccedil;&otilde;es que transformam cores. Cores s&atilde;o primeiramente convertidas para
 o formato *HSL*, e ent&atilde;o manipuladas a n&iacute;vel de canal:
 
-    lighten(@color, 10%);     // retorna uma cor que é 10% *mais clara* que @color
-    darken(@color, 10%);      // retorna uma cor que é 10% *mais escura* que @color
+    lighten(@color, 10%);     // retorna uma cor que &eacute; 10% *mais clara* que @color
+    darken(@color, 10%);      // retorna uma cor que &eacute; 10% *mais escura* que @color
 
     saturate(@color, 10%);    // retorna uma cor 10% *mais* saturada que @color
     desaturate(@color, 10%);  // retorna uma cor 10% *menos* saturada que @color
@@ -415,7 +415,7 @@ O uso das fun&ccedil;&otilde;es &eacute; bem simples:
 Tamb&eacute;m &eacute; poss&iacute;vel extrair informa&ccedil;&atilde; das cores:
 
     hue(@color);        // retorna o canal `matiz` (hue) de @color
-    saturation(@color); // retorna o canal `saturação` (saturation) de @color
+    saturation(@color); // retorna o canal `satura&cedil;&atilde;o` (saturation) de @color
     lightness(@color);  // retorna o canal `luminosidade` (lightness) de @color
     alpha(@color);      // retorna o canal "alpha" de @color
 
@@ -485,13 +485,13 @@ Coment&aacute;rios
 
 Coment&aacute;rios seguindo o padr&atilde;o CSS s&atilde;o preservados em LESS:
 
-    /* Olá, sou um comentário no estilo CSS */
+    /* Ol&aacute;, sou um coment&aacute;rio no estilo CSS */
     .class { color: black }
 
 Coment&aacute;rio de uma linha tamb&eacute;m s&atilde;o v&aacute;lidos no LESS, mas s&atilde;o "silenciosos",
 eles n&atilde;o aparecem no CSS compilado:
 
-    // Opa, sou um comentário do tipo silencioso e não vou aparecer no CSS final
+    // Opa, sou um coment&aacute;rio do tipo silencioso e n&atilde;o vou aparecer no CSS final
     .class { color: white }
 
 Importa&ccedil;&atilde;o
