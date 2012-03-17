@@ -29,14 +29,14 @@ Na verdade as vari&aacute;veis em LESS s&atilde;o "constantes", pois elas s&oacu
 Mixins
 ------
 
-Em LESS, &eacute; poss&iacute;vel incluir v&aacute;rias propriedades de um ruleset em um outro ruleset. Digamos que n&oacute;s temos a seguinte classe:
+Em LESS, &eacute; poss&iacute;vel incluir v&aacute;rias propriedades de um grupo de regras (ruleset) em um outro grupo de regras. Digamos que n&oacute;s temos a seguinte classe:
 
     .bordered {
       border-top: dotted 1px black;
       border-bottom: solid 2px black;
     }
 
-E n&oacute;s queremos usar essas propriedades dentro de outros rulesets. N&oacute;s apenas temos que por o nome da classe dentro de qualquer ruleset que desejamos utilizar estas propriedades, como no exemplo:
+E n&oacute;s queremos usar essas propriedades dentro de outros grupos de regras. N&oacute;s apenas temos que por o nome da classe dentro de qualquer grupo de regras que desejamos utilizar estas propriedades, como no exemplo:
 
     #menu a {
       color: #111;
@@ -60,12 +60,12 @@ As propriedades da classe `.bordered` agora v&atilde;o aparecer tanto em `#menu 
       border-bottom: solid 2px black;
     }
 
-Qualquer ruleset CSS do tipo *classe* ou *id* pode ser usado como mixin desta forma.
+Qualquer grupo de rerga CSS do tipo *classe* ou *id* pode ser usado como mixin desta forma.
 
 Mixins com Par&acirc;metros
 ---------------------------
 
-LESS possui um tipo especial de ruleset que pode ser usado como mixin, como as classes, mas que aceitam par&acirc;metros. Este &eacute; o exemplo can&ocirc;nico:
+LESS possui um tipo especial de grupo de regras (ruleset) que pode ser usado como mixin, como as classes, mas que aceitam par&acirc;metros. Este &eacute; o exemplo can&ocirc;nico:
 
     .border-radius (@radius) {
       border-radius: @radius;
@@ -73,7 +73,7 @@ LESS possui um tipo especial de ruleset que pode ser usado como mixin, como as c
       -webkit-border-radius: @radius;
     }
 
-E aqui como podemos us&aacute;-lo como mixin em v&aacute;rios rulesets:
+E aqui como podemos us&aacute;-lo como mixin em v&aacute;rios grupos de regras:
 
     #header {
       .border-radius(4px);
@@ -98,8 +98,9 @@ Agora n&oacute;s podemos usar o mixin anterior como:
 
 E ele incluir&aacute; um border-radius de 5px.
 
-Voc&ecirc; pode inclusive usar mixins param&eacute;tricos que n&atilde;o recebem par&acirc;metros. Isto &eacute; &uacute;til se voc&ecirc; quiser esconder o ruleset do da sa&iacute;da em CSS,
-mas deseja incluir as propriedades em outros rulesets:
+Voc&ecirc; pode inclusive usar mixins param&eacute;tricos que n&atilde;o recebem par&acirc;metros.
+Isto &eacute; &uacute;til se voc&ecirc; quiser esconder o grupo de regras da sa&iacute;da em CSS,
+mas deseja incluir as propriedades em outros grupos de regras:
 
     .wrap () {
       text-wrap: wrap;
@@ -332,8 +333,8 @@ Ou desta outra maneira:
 
 O c&oacute;digo resultante &eacute; mais conciso, e mimica a estrutura da sua `&aacute;rvore DOM`.
 
-Perceba o combinador `&amp;`--ele &eacute; usado quando queremos usar um seletor aninhado concatenado aos seu seletor pai, ao contr&aacute;rio de atuar como um descendente.
-Isto &eacute; muito importante para pseudo-classe como `:hover` e `:focus`.
+Perceba o combinador `&`--ele &eacute; usado quando queremos usar um seletor aninhado concatenado aos seu seletor pai, ao contr&aacute;rio de atuar como um descendente.
+Isto &eacute; muito importante para pseudo-classes como `:hover` e `:focus`.
 
 Por exemplo:
 
@@ -415,7 +416,7 @@ O uso das fun&ccedil;&otilde;es &eacute; bem simples:
 Tamb&eacute;m &eacute; poss&iacute;vel extrair informa&ccedil;&atilde; das cores:
 
     hue(@color);        // retorna o canal `matiz` (hue) de @color
-    saturation(@color); // retorna o canal `satura&cedil;&atilde;o` (saturation) de @color
+    saturation(@color); // retorna o canal `satura&ccedil;&atilde;o` (saturation) de @color
     lightness(@color);  // retorna o canal `luminosidade` (lightness) de @color
     alpha(@color);      // retorna o canal "alpha" de @color
 
@@ -442,7 +443,7 @@ Namespaces
 ----------
 
 Algumas vezes, queremos agrupar nossas vari&aacute;veis e mixins, por motivos de organiza&ccedil;&atilde;o, ou apenas para oferecer encapsulamento.
-Podemos fazer isso de forma intuitiva em LESS-digamos que queremos criar um pacote com alguns mixins e vari&aacute;veis com o nome `#bundle`, para re-uso posterior ou para distribui&ccedil;&atilde;o:
+Podemos fazer isso de forma intuitiva em LESS-digamos que queremos criar um pacote com alguns mixins e vari&aacute;veis com o nome `#bundle`, para reuso posterior ou para distribui&ccedil;&atilde;o:
 
     #bundle {
       .button () {
@@ -537,7 +538,7 @@ Isto &eacute; chamado de 'escaped valur', que ir&aacute; resultar em:
 Avalia&ccedil;&atilde;o (evaluation) de JavaScript
 ------------------------------------
 
-Express&otilde;es JavaScript podem ser avaliadas (evaluated) como valores detro dos arquivos .less.
+Express&otilde;es JavaScript podem ser avaliadas (evaluate) como valores detro dos arquivos .less.
 Isto &eacute; feito colocando a express&otilde;es entre crases:
 
     @var: `'hello'.toUpperCase() + "!"`;

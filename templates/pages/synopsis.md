@@ -74,7 +74,7 @@ Regras Aninhadas
 ----------------
 
 Ao inv&eacute;s de construir longos nomes de seletores para especificar heran&ccedil;a,
-em Less voc&ecirc; pode simplesmente aninhar seletores dentro de outros seletores.
+em LESS voc&ecirc; pode simplesmente aninhar seletores dentro de outros seletores.
 Isto faz com que a heran&ccedil;a fique mais clara e as folhas de estilos menores.
 
 <table class="code-example" cellpadding="0">

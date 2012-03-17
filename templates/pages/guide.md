@@ -24,14 +24,14 @@ Uso no lado do servidor
 Instala&ccedil;&atilde;o
 ------------
 
-A maneira mais f&aacute;cil de instalar o LESS no servidor, &eacute; por [npm](http://github.com/isaacs/npm), o gerenciador de pacotes node, desta forma:
+A maneira mais f&aacute;cil de instalar o LESS no servidor, &eacute; pelo [npm](http://github.com/isaacs/npm), o gerenciador de pacotes do NodeJS, desta forma:
 
     $ npm install less
 
 Uso
 ---
 
-Uma vez instalado, voc&ecirc; pode chamar o compilador pelo node, assim:
+Uma vez instalado, voc&ecirc; pode chamar o compilador pelo NodeJS, assim:
 
     var less = require("less");
     
@@ -45,7 +45,7 @@ que produzir&aacute; a sa&iacute;da
       width: 2;
     }
 
-voc&ecirc; tamb&eacute;m pode chamar o analisador e o compilador manualmente:
+voc&ecirc; tamb&eacute;m pode chamar o analisador (parser) e o compilador manualmente:
 
     var parser = new(less.Parser);
 
