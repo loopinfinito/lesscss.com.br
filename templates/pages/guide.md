@@ -11,10 +11,10 @@ Depois baixe o `less.js` no topo desta página, e o inclua no elemento `<head>` 
 
 Certifique-se de incluir suas folhas estilos *antes* do script.
 
-Modo assistido
+Modo watch
 ----------
 
-*Modo assistido* é uma característica do lado do cliente que permite que seus estilos sejam automaticamente atualizados assim que forem alterados.
+*Modo watch* é uma característica do lado do cliente que permite que seus estilos sejam automaticamente atualizados assim que forem alterados.
 
 Para ativá-la, acrescente '`#!watch`' na URL do navegador e depois atualize a página. Alternativamente, você pode rodar `less.watch()` diretamente do console.
 

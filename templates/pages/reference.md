@@ -1,22 +1,22 @@
-Reference
-=========
+Referência
+==========
 
-Test runner
+Teste
 -----------
 
     vows [FILE, ...] [options]
 
-### Running tests #
+### Rodando testes #
 
     $ vows test-1.js test-2.js
     $ vows tests/*
 
-Watch mode
+Modo watch
 
     $ vows -w
     $ vows --watch
 
-### Options #
+### Opções #
 
 <table cellspacing="10">
   <tr>
