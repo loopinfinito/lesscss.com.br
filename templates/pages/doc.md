@@ -1,6 +1,6 @@
-Como uma extensão do CSS, LESS não é somente retrocompatível com CSS, mas as funcionalidades extras que ele adicona utilizam a sintaxe <em>existente</em> do CSS. Isso torna o aprendizado do LESS <em>fácil</em> e, em caso de dúvida, permite que você use a sintaxe regular de CSS como fallback.
+Como uma extens&atilde;o do CSS, LESS n&atilde;o &eacute; somente retrocompat&iacute;vel com CSS, mas as funcionalidades extras que ele adicona utilizam a sintaxe <em>existente</em> do CSS. Isso torna o aprendizado do LESS <em>f&aacute;cil</em> e, em caso de d&uacute;vida, permite que voc&ecirc; use a sintaxe regular de CSS como fallback.
 
-Variáveis
+Vari&aacute;veis
 ---------
 
 Estes se auto explicam:
@@ -10,33 +10,33 @@ Estes se auto explicam:
 
     #header { color: @light-blue; }
 
-Saída:
+Sa&iacute;da:
 
     #header { color: #6c94be; }
 
-Também é possível definir variáveis com um nome variável:
+Tamb&eacute;m &eacute; poss&iacute;vel definir vari&aacute;veis com um nome vari&aacute;vel:
 
-    @fnord: "I am fnord.";
-    @var: 'fnord';
+    @fnord: 'I am fnord.';
+    @var: "fnord";
     content: @@var;
 
 Que compila para:
 
-    content: "I am fnord.";
+    content: 'I am fnord.';
 
-Na verdade as variáveis em LESS são 'constantes', pois elas só podem ser definidas uma vez.
+Na verdade as vari&aacute;veis em LESS s&atilde;o "constantes", pois elas s&oacute; podem ser definidas uma vez.
 
 Mixins
 ------
 
-Em LESS, é possível incluir várias propriedades de um ruleset em um outro ruleset. Digamos que nós temos a seguinte classe:
+Em LESS, &eacute; poss&iacute;vel incluir v&aacute;rias propriedades de um ruleset em um outro ruleset. Digamos que n&oacute;s temos a seguinte classe:
 
     .bordered {
       border-top: dotted 1px black;
       border-bottom: solid 2px black;
     }
 
-E nós queremos usar essas propriedades dentro de outros rulesets. Nós apenas temos que por o nome da classe dentro de qualquer ruleset que desejamos utilizar estas propriedades, como no exemplo:
+E n&oacute;s queremos usar essas propriedades dentro de outros rulesets. N&oacute;s apenas temos que por o nome da classe dentro de qualquer ruleset que desejamos utilizar estas propriedades, como no exemplo:
 
     #menu a {
       color: #111;
@@ -47,7 +47,7 @@ E nós queremos usar essas propriedades dentro de outros rulesets. Nós apenas t
       .bordered;
     }
 
-As propriedades da classe `.bordered` agora vão aparecer tanto em `#menu a` como em `.post a`:
+As propriedades da classe `.bordered` agora v&atilde;o aparecer tanto em `#menu a` como em `.post a`:
 
     #menu a {
       color: #111;
@@ -62,10 +62,10 @@ As propriedades da classe `.bordered` agora vão aparecer tanto em `#menu a` com
 
 Qualquer ruleset CSS do tipo *classe* ou *id* pode ser usado como mixin desta forma.
 
-Mixins Paramétricos
+Mixins Param&eacute;tricos
 -------------------
 
-LESS possui um tipo especial de ruleset que pode ser usado como mixin, como as classes, mas que aceitam parâmetros. Este é o exemplo canônico:
+LESS possui um tipo especial de ruleset que pode ser usado como mixin, como as classes, mas que aceitam par&acirc;metros. Este &eacute; o exemplo can&ocirc;nico:
 
     .border-radius (@radius) {
       border-radius: @radius;
@@ -73,7 +73,7 @@ LESS possui um tipo especial de ruleset que pode ser usado como mixin, como as c
       -webkit-border-radius: @radius;
     }
 
-E aqui como podemos usá-lo como mixin em vários rulesets:
+E aqui como podemos us&aacute;-lo como mixin em v&aacute;rios rulesets:
 
     #header {
       .border-radius(4px);
@@ -82,7 +82,7 @@ E aqui como podemos usá-lo como mixin em vários rulesets:
       .border-radius(6px);
     }
 
-Mixins paramétricos podem inclusive ter valores padrão para seus parâmetros:
+Mixins param&eacute;tricos podem inclusive ter valores padr&atilde;o para seus par&acirc;metros:
 
     .border-radius (@radius: 5px) {
       border-radius: @radius;
@@ -90,15 +90,15 @@ Mixins paramétricos podem inclusive ter valores padrão para seus parâmetros:
       -webkit-border-radius: @radius;
     }
 
-Agora nós podemos usar o mixin anterior como:
+Agora n&oacute;s podemos usar o mixin anterior como:
 
     #header {
       .border-radius;
     }
 
-E ele incluirá um border-radius de 5px.
+E ele incluir&aacute; um border-radius de 5px.
 
-Você pode inclusive usar mixins paramétricos que não recebem parâmetros. Isto é útil se você quiser esconder o ruleset do da saída em CSS,
+Voc&ecirc; pode inclusive usar mixins param&eacute;tricos que n&atilde;o recebem par&acirc;metros. Isto &eacute; &uacute;til se voc&ecirc; quiser esconder o ruleset do da sa&iacute;da em CSS,
 mas deseja incluir as propriedades em outros rulesets:
 
     .wrap () {
@@ -110,7 +110,7 @@ mas deseja incluir as propriedades em outros rulesets:
 
     pre { .wrap }
 
-Que gera a saída:
+Que gera a sa&iacute;da:
 
     pre {
       text-wrap: wrap;
@@ -119,10 +119,10 @@ Que gera a saída:
       word-wrap: break-word;
     }
 
-### A variável `@arguments`
+### A vari&aacute;vel `@arguments`
 
 `@arguments` possui um significado especial dentro de mixins. Ele possui todos os argumentos passados quando o mixin foi chamado.
-Isto é útil se você não quer se preocupar individualmente com cada parâmetro.
+Isto &eacute; &uacute;til se voc&ecirc; n&atilde;o quer se preocupar individualmente com cada par&acirc;metro.
 
     .box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
       box-shadow: @arguments;
@@ -131,16 +131,16 @@ Isto é útil se você não quer se preocupar individualmente com cada parâmetr
     }
     .box-shadow(2px, 5px);
 
-O que gera a saída:
+O que gera a sa&iacute;da:
 
       box-shadow: 2px 5px 1px #000;
       -moz-box-shadow: 2px 5px 1px #000;
       -webkit-box-shadow: 2px 5px 1px #000;
 
-## Pattern-matching e expressões Guard
+## Pattern-matching e express&otilde;es Guard
 
-Você pode querer modificar o comportamento de um mixin baseado nos parâmetros passados.
-Vamos começar com algo básico
+Voc&ecirc; pode querer modificar o comportamento de um mixin baseado nos par&acirc;metros passados.
+Vamos come&ccedil;ar com algo b&aacute;sico
 
     .mixin (@s, @color) { ... }
 
@@ -148,8 +148,8 @@ Vamos começar com algo básico
       .mixin(@switch, #888);
     }
 
-Agora digamos que nós queremos que `.mixin` tenha um comportamento diferente, baseado no valor de `@switch`.
-Nós poderiamos definir `.mixin` como:
+Agora digamos que n&oacute;s queremos que `.mixin` tenha um comportamento diferente, baseado no valor de `@switch`.
+N&oacute;s poderiamos definir `.mixin` como:
 
     .mixin (dark, @color) {
       color: darken(@color, 10%);
@@ -169,7 +169,7 @@ Agora, se rodarmos:
       .mixin(@switch, #888);
     }
 
-Nós vamos obter o seguinte CSS:
+N&oacute;s vamos obter o seguinte CSS:
 
     .class {
       color: #a2a2a2;
@@ -181,14 +181,14 @@ teria sido uma cor escurecida.
 
 O que aconteceu, passo-a-passo:
 
-- A primeira definição do mixin não se encaixava, pois era esperado o valor `dark` como primeiro argumento.
-- A segunda definição do mixin encaixa, pois era esperado `light`.
-- A terceira definição do mixin também encaixa, pois ele espera por qualquer valor.
+- A primeira defini&ccedil;&atilde;o do mixin n&atilde;o se encaixava, pois era esperado o valor `dark` como primeiro argumento.
+- A segunda defini&ccedil;&atilde;o do mixin encaixa, pois era esperado `light`.
+- A terceira defini&ccedil;&atilde;o do mixin tamb&eacute;m encaixa, pois ele espera por qualquer valor.
 
-Apenas as definições de mixins que foram encaixadas (matched) foram usadas. Variáveis encaixam e ficam vinculadas a qualquer valor.
-Qualquer coisa que não seja uma variável se encaixa apenas com um valor igual a si mesmo.
+Apenas as defini&ccedil;&otilde;es de mixins que foram encaixadas (matched) foram usadas. Vari&aacute;veis encaixam e ficam vinculadas a qualquer valor.
+Qualquer coisa que n&atilde;o seja uma vari&aacute;vel se encaixa apenas com um valor igual a si mesmo.
 
-É possível também dar match pela aridade (número de argumentos). Aqui vai um exemplo:
+&Eacute; poss&iacute;vel tamb&eacute;m dar match pela aridade (n&uacute;mero de argumentos). Aqui vai um exemplo:
 
     .mixin (@a) {
       color: @a;
@@ -197,37 +197,37 @@ Qualquer coisa que não seja uma variável se encaixa apenas com um valor igual 
       color: fade(@a, @b);
     }
 
-Agora se chamarmos `.mixin` com apenas um argumento, vamos ter a saída da primeira definição,
-mas se chamarmos `.mixin` com *dois* argumentos, o match vai acontecer na segunda definição, que pode ser traduzido para `@a` da um fade para `@b`.
+Agora se chamarmos `.mixin` com apenas um argumento, vamos ter a sa&iacute;da da primeira defini&ccedil;&atilde;o,
+mas se chamarmos `.mixin` com *dois* argumentos, o match vai acontecer na segunda defini&ccedil;&atilde;o, que pode ser traduzido para `@a` da um fade para `@b`.
 
 ### Guards
 
-Guards são úteis quando se quer dar match em *expresões*, e não em simples valores ou aridade.
-Se você é familiar com programação funcional, você provavelmente já se deparou com ela.
+Guards s&atilde;o &uacute;teis quando se quer dar match em *expres&otilde;es*, e n&atilde;o em simples valores ou aridade.
+Se voc&ecirc; &eacute; familiar com programa&ccedil;&atilde;o funcional, voc&ecirc; provavelmente j&aacute; se deparou com ela.
 
-Na tentative de permanecer o mais próximo possível da natureza declarativa do CSS, LESS optou por implementar
-execução condicional através de **guarded mixins** ao invés de if/else, seguindo a especificação do `@media` query.
+Na tentative de permanecer o mais pr&oacute;ximo poss&iacute;vel da natureza declarativa do CSS, LESS optou por implementar
+execu&ccedil;&atilde;o condicional atrav&eacute;s de **guarded mixins** ao inv&eacute;s de if/else, seguindo a especifica&ccedil;&atilde;o do `@media` query.
 
-Vamos começar com um exemplo:
+Vamos come&ccedil;ar com um exemplo:
 
-    .mixin (@a) when (lightness(@a) >= 50%) {
+    .mixin (@a) when (lightness(@a) &gt;= 50%) {
       background-color: black;
     }
-    .mixin (@a) when (lightness(@a) < 50%) {
+    .mixin (@a) when (lightness(@a) &lt; 50%) {
       background-color: white;
     }
     .mixin (@a) {
       color: @a;
     }
 
-O ponto crucial aqui é a palavra reservada **`when`**, que introduz uma sequência guard (aqui com apenas um guard).
-Agora se rodarmos o seginte código:
+O ponto crucial aqui &eacute; a palavra reservada **`when`**, que introduz uma sequ&ecirc;ncia guard (aqui com apenas um guard).
+Agora se rodarmos o seginte c&oacute;digo:
 
     .class1 { .mixin(#ddd) }
     .class2 { .mixin(#555) }
 
 
-Isto é o que vamos obter:
+Isto &eacute; o que vamos obter:
 
     .class1 {
       background-color: black;
@@ -238,37 +238,37 @@ Isto é o que vamos obter:
       color: #555;
     }
 
-A lista completa de operadores de comparação usadas nos guards são: **`> >= = =< <`**. Adicionalmente, a palavra reservada `true` é o único valor verdade em uma comparação, fazendo esses dois mixins equivalentes:
+A lista completa de operadores de compara&ccedil;&atilde;o usadas nos guards s&atilde;o: **`&gt; &gt;= = =&lt; &lt;`**. Adicionalmente, a palavra reservada `true` &eacute; o &uacute;nico valor verdade em uma compara&ccedil;&atilde;o, fazendo esses dois mixins equivalentes:
 
     .truth (@a) when (@a) { ... }
     .truth (@a) when (@a = true) { ... }
 
-Qualquer outro valor que não seja a palavra reservada `true` é falso em uma comparação:
+Qualquer outro valor que n&atilde;o seja a palavra reservada `true` &eacute; falso em uma compara&ccedil;&atilde;o:
 
     .class {
       .truth(40); // Will not match any of the above definitions.
     }
 
-Guards também pode ser separados por vírgula '`,`'--se algum guard for avaliado como verdadeiro, então é dado o match:
+Guards tamb&eacute;m pode ser separados por v&iacute;rgula "`,`"--se algum guard for avaliado como verdadeiro, ent&atilde;o &eacute; dado o match:
 
-    .mixin (@a) when (@a > 10), (@a < -10) { ... }
+    .mixin (@a) when (@a &gt; 10), (@a &lt; -10) { ... }
 
-Também é possível comparar argumentos com outros argumentos, ou com não-argumentos:
+Tamb&eacute;m &eacute; poss&iacute;vel comparar argumentos com outros argumentos, ou com n&atilde;o-argumentos:
 
     @media: mobile;
 
     .mixin (@a) when (@media = mobile) { ... }
     .mixin (@a) when (@media = desktop) { ... }
 
-    .max (@a, @b) when (@a > @b) { width: @a }
-    .max (@a, @b) when (@a < @b) { width: @b }
+    .max (@a, @b) when (@a &gt; @b) { width: @a }
+    .max (@a, @b) when (@a &lt; @b) { width: @b }
 
-E por último, se você quiser dar match em mixins baseado em valores de tipos, é possível usar as funções *is\**:
+E por &uacute;ltimo, se voc&ecirc; quiser dar match em mixins baseado em valores de tipos, &eacute; poss&iacute;vel usar as fun&ccedil;&otilde;es *is\**:
 
     .mixin (@a, @b: 0) when (isnumber(@b)) { ... }
     .mixin (@a, @b: black) when (iscolor(@b)) { ... }
 
-Aqui estão as funções básicas de checagem de tipos:
+Aqui est&atilde;o as fun&ccedil;&otilde;es b&aacute;sicas de checagem de tipos:
 
 - `iscolor`
 - `isnumber`
@@ -276,24 +276,24 @@ Aqui estão as funções básicas de checagem de tipos:
 - `iskeyword`
 - `isurl`
 
-Se você quiser checar se um valor, além de ser um número, está em uma unidade específica, você pode usar:
+Se voc&ecirc; quiser checar se um valor, al&eacute;m de ser um n&uacute;mero, est&aacute; em uma unidade espec&iacute;fica, voc&ecirc; pode usar:
 
 - `ispixel`
 - `ispercentage`
 - `isem`
 
-Além disso tudo, ainda é possível usar a palavra reservada **`and`** para condições adicionais dentro de um guard:
+Al&eacute;m disso tudo, ainda &eacute; poss&iacute;vel usar a palavra reservada **`and`** para condi&ccedil;&otilde;es adicionais dentro de um guard:
 
-    .mixin (@a) when (isnumber(@a)) and (@a > 0) { ... }
+    .mixin (@a) when (isnumber(@a)) and (@a &gt; 0) { ... }
 
-E a palavra reservada **`not`** para negar as condições:
+E a palavra reservada **`not`** para negar as condi&ccedil;&otilde;es:
 
-    .mixin (@b) when not (@b > 0) { ... }
+    .mixin (@b) when not (@b &gt; 0) { ... }
 
 Regras aninhadas
 ----------------
 
-LESS lhe dá a habilidade de usar *aninhamento*, com ou sem cascateamento (cascading).
+LESS lhe d&aacute; a habilidade de usar *aninhamento*, com ou sem cascateamento (cascading).
 Digamos que temos o seguinte CSS:
 
     #header { color: black; }
@@ -307,7 +307,7 @@ Digamos que temos o seguinte CSS:
       text-decoration: none;
     }
 
-Em LESS, nós também podemos escrever da seguinte maneira:
+Em LESS, n&oacute;s tamb&eacute;m podemos escrever da seguinte maneira:
 
     #header {
       color: black;
@@ -317,7 +317,7 @@ Em LESS, nós também podemos escrever da seguinte maneira:
       }
       .logo {
         width: 300px;
-        &:hover { text-decoration: none }
+        &amp;:hover { text-decoration: none }
       }
     }
 
@@ -326,19 +326,19 @@ Ou desta outra maneira:
     #header        { color: black;
       .navigation  { font-size: 12px }
       .logo        { width: 300px;
-        &:hover    { text-decoration: none }
+        &amp;:hover    { text-decoration: none }
       }
     }
 
-O código resultante é mais conciso, e mimica a estrutura da sua `árvore DOM`.
+O c&oacute;digo resultante &eacute; mais conciso, e mimica a estrutura da sua `&aacute;rvore DOM`.
 
-Perceba o combinador `&`--ele é usado quando queremos usar um seletor aninhado concatenado aos seu seletor pai, ao contrário de atuar como um descendente.
-Isto é muito importante para pseudo-classe como `:hover` e `:focus`.
+Perceba o combinador `&amp;`--ele &eacute; usado quando queremos usar um seletor aninhado concatenado aos seu seletor pai, ao contr&aacute;rio de atuar como um descendente.
+Isto &eacute; muito importante para pseudo-classe como `:hover` e `:focus`.
 
 Por exemplo:
 
     .bordered {
-      &.float {
+      &amp;.float {
         float: left;
       }
       .top {
@@ -346,7 +346,7 @@ Por exemplo:
       }
     }
 
-Vai gerar a saída:
+Vai gerar a sa&iacute;da:
 
     .bordered.float {
       float: left;
@@ -355,10 +355,10 @@ Vai gerar a saída:
       margin: 5px;
     }
 
-Operações
+Opera&ccedil;&otilde;es
 ----------
 
-Qualquer número, cor ou variável pode ser usado em operações. Alguns exemplos:
+Qualquer n&uacute;mero, cor ou vari&aacute;vel pode ser usado em opera&ccedil;&otilde;es. Alguns exemplos:
 
     @base: 5%;
     @filler: @base * 2;
@@ -368,25 +368,25 @@ Qualquer número, cor ou variável pode ser usado em operações. Alguns exemplo
     background-color: @base-color + #111;
     height: 100% / 2 + @filler;
 
-A saída é basicamente o que se espera-LESS entende a diferença entre cores e unidade. Se uma unidade é usada em uma operação, como em:
+A sa&iacute;da &eacute; basicamente o que se espera-LESS entende a diferen&ccedil;a entre cores e unidade. Se uma unidade &eacute; usada em uma opera&ccedil;&atilde;o, como em:
 
     @var: 1px + 5;
 
-LESS irá usar esta unidade para a saída final-`6px` neste caso.
+LESS ir&aacute; usar esta unidade para a sa&iacute;da final-`6px` neste caso.
 
-Parênteses também são permitidos nessas operações:
+Par&ecirc;nteses tamb&eacute;m s&atilde;o permitidos nessas opera&ccedil;&otilde;es:
 
     width: (@var + 5) * 2;
 
-E são obrigatórios em valores compostos:
+E s&atilde;o obrigat&oacute;rios em valores compostos:
 
     border: (@width * 2) solid black;
 
-Funcões de cores
+Func&otilde;es de cores
 ----------------
 
-LESS fornece uma variedade de funções que transformam cores. Cores são primeiramente convertidas para
-o formato *HSL*, e então manipuladas a nível de canal:
+LESS fornece uma variedade de fun&ccedil;&otilde;es que transformam cores. Cores s&atilde;o primeiramente convertidas para
+o formato *HSL*, e ent&atilde;o manipuladas a n&iacute;vel de canal:
 
     lighten(@color, 10%);     // return a color which is 10% *lighter* than @color
     darken(@color, 10%);      // return a color which is 10% *darker* than @color
@@ -403,7 +403,7 @@ o formato *HSL*, e então manipuladas a nível de canal:
 
     mix(@color1, @color2);    // return a mix of @color1 and @color2
 
-O uso das funções é bem simples:
+O uso das fun&ccedil;&otilde;es &eacute; bem simples:
 
     @base: #f04615;
 
@@ -412,44 +412,44 @@ O uso das funções é bem simples:
       background-color: lighten(spin(@base, 8), 25%);
     }
 
-Também é possível extrair informaçã das cores:
+Tamb&eacute;m &eacute; poss&iacute;vel extrair informa&ccedil;&atilde; das cores:
 
     hue(@color);        // returns the `hue` channel of @color
     saturation(@color); // returns the `saturation` channel of @color
-    lightness(@color);  // returns the 'lightness' channel of @color
-    alpha(@color);      // returns the 'alpha' channel of @color
+    lightness(@color);  // returns the "lightness" channel of @color
+    alpha(@color);      // returns the "alpha" channel of @color
 
-Isto é útil se quisermos criar uma nova cor baseada em um canal de uma outra cor, por exemplo:
+Isto &eacute; &uacute;til se quisermos criar uma nova cor baseada em um canal de uma outra cor, por exemplo:
 
     @new: hsl(hue(@old), 45%, 90%);
 
-`@new` vai ter o *hue* de `@old`, e sua própria saturation e lightness.
+`@new` vai ter o *hue* de `@old`, e sua pr&oacute;pria saturation e lightness.
 
-Funções Matemáticas
+Fun&ccedil;&otilde;es Matem&aacute;ticas
 -------------------
 
-LESS fornece algumas funções matemáticas bastante úteis que podemos usar com valores:
+LESS fornece algumas fun&ccedil;&otilde;es matem&aacute;ticas bastante &uacute;teis que podemos usar com valores:
 
     round(1.67); // returns `2`
     ceil(2.4);   // returns `3`
     floor(2.6);  // returns `2`
 
-Se precisarmos transformar um valor em uma porcentagem, poder fazer isso com a função `percentage`:
+Se precisarmos transformar um valor em uma porcentagem, poder fazer isso com a fun&ccedil;&atilde;o `percentage`:
 
     percentage(0.5); // returns `50%`
 
 Namespaces
 ----------
 
-Algumas vezes, queremos agrupar nossas variáveis e mixins, por motivos de organização, ou apenas para oferecer encapsulamento.
-Podemos fazer isso de forma intuitiva em LESS-digamos que queremos criar um pacote com alguns mixins e variáveis com o nome `#bundle`, para re-uso posterior ou para distribuição:
+Algumas vezes, queremos agrupar nossas vari&aacute;veis e mixins, por motivos de organiza&ccedil;&atilde;o, ou apenas para oferecer encapsulamento.
+Podemos fazer isso de forma intuitiva em LESS-digamos que queremos criar um pacote com alguns mixins e vari&aacute;veis com o nome `#bundle`, para re-uso posterior ou para distribui&ccedil;&atilde;o:
 
     #bundle {
       .button () {
         display: block;
         border: 1px solid black;
         background-color: grey;
-        &:hover { background-color: white }
+        &amp;:hover { background-color: white }
       }
       .tab { ... }
       .citation { ... }
@@ -459,13 +459,13 @@ Agora se quisermos adicionar o classe `.button` do mixin ao nosso `#header a`, p
 
     #header a {
       color: orange;
-      #bundle > .button;
+      #bundle &gt; .button;
     }
 
 Escopo
 ------
 
-Escopo em LESS é muito semelhante ao de linguagens de programação. Variáveis e mixins são primeiro procurados localmente, e caso não sejam encontrados, o compilador irá procurar no escopo pai, e assim por diante.
+Escopo em LESS &eacute; muito semelhante ao de linguagens de programa&ccedil;&atilde;o. Vari&aacute;veis e mixins s&atilde;o primeiro procurados localmente, e caso n&atilde;o sejam encontrados, o compilador ir&aacute; procurar no escopo pai, e assim por diante.
 
     @var: red;
 
@@ -480,86 +480,86 @@ Escopo em LESS é muito semelhante ao de linguagens de programação. Variáveis
       color: @var; // red
     }
 
-Comentários
+Coment&aacute;rios
 -----------
 
-Comentários seguindo o padrão CSS são preservados em LESS:
+Coment&aacute;rios seguindo o padr&atilde;o CSS s&atilde;o preservados em LESS:
 
-    /* Hello, I'm a CSS-style comment */
+    /* Hello, I"m a CSS-style comment */
     .class { color: black }
 
-Comentário de uma linha também são válidos no LESS, mas são 'silenciosos',
-eles não aparecem no CSS compilado:
+Coment&aacute;rio de uma linha tamb&eacute;m s&atilde;o v&aacute;lidos no LESS, mas s&atilde;o "silenciosos",
+eles n&atilde;o aparecem no CSS compilado:
 
-    // Hi, I'm a silent comment, I won't show up in your CSS
+    // Hi, I"m a silent comment, I won"t show up in your CSS
     .class { color: white }
 
-Importação
+Importa&ccedil;&atilde;o
 ----------
 
-Podemos importar arquivos `.less`, e todas as variáveis e mixins nestes estarão disponíveis no arquivo principal.
-A extensão `.less` é opcional, então ambas as regras são válidas:
+Podemos importar arquivos `.less`, e todas as vari&aacute;veis e mixins nestes estar&atilde;o dispon&iacute;veis no arquivo principal.
+A extens&atilde;o `.less` &eacute; opcional, ent&atilde;o ambas as regras s&atilde;o v&aacute;lidas:
 
-    @import "lib.less";
-    @import "lib";
+    @import 'lib.less';
+    @import 'lib';
 
-Se quisermos importar um arquivo CSS, e não quisermos que LESS processe ele, apenas usamos a extensão `.css`:
+Se quisermos importar um arquivo CSS, e n&atilde;o quisermos que LESS processe ele, apenas usamos a extens&atilde;o `.css`:
 
-    @import "lib.css";
-A diretiva irá ficar como está, e acabará como uma saída CSS.
+    @import 'lib.css';
+A diretiva ir&aacute; ficar como est&aacute;, e acabar&aacute; como uma sa&iacute;da CSS.
 
-Interpolação de strings
+Interpola&ccedil;&atilde;o de strings
 -----------------------
 
-Variáveis podem ser incluídas dentro de strings de uma maneira similar a ruby ou PHP, com o construtor `@{name}`
+Vari&aacute;veis podem ser inclu&iacute;das dentro de strings de uma maneira similar a ruby ou PHP, com o construtor `@{name}`
 
-    @base-url: "http://assets.fnord.com";
-    background-image: url("@{base-url}/images/bg.png");
+    @base-url: 'http://assets.fnord.com';
+    background-image: url('@{base-url}/images/bg.png');
 
 Escaping
 --------
 
-Podemos precisar usar um valor CSS na saída que não é válido pela sintaxe do CSS,
-ou utiliza uma sintaxe proprietária que LESS não reconhece.
+Podemos precisar usar um valor CSS na sa&iacute;da que n&atilde;o &eacute; v&aacute;lido pela sintaxe do CSS,
+ou utiliza uma sintaxe propriet&aacute;ria que LESS n&atilde;o reconhece.
 
-Para gerar a saída de tal valor, o colocamos dentro de uma string começando com `~`, por exemplo:
+Para gerar a sa&iacute;da de tal valor, o colocamos dentro de uma string come&ccedil;ando com `~`, por exemplo:
 
     .class {
-      filter: ~"ms:alwaysHasItsOwnSyntax.For.Stuff()";
+      filter: ~'ms:alwaysHasItsOwnSyntax.For.Stuff()';
     }
 
-Isto é chamado de "escaped valur", que irá resultar em:
+Isto &eacute; chamado de 'escaped valur', que ir&aacute; resultar em:
 
     .class {
       filter: ms:alwaysHasItsOwnSyntax.For.Stuff();
     }
 
-Avaliação (evaluation) de JavaScript
+Avalia&ccedil;&atilde;o (evaluation) de JavaScript
 ------------------------------------
 
-Expressões JavaScript podem ser avaliadas (evaluated) como valores detro dos arquivos .less.
-Isto é feito colocando a expressões entre crases:
+Express&otilde;es JavaScript podem ser avaliadas (evaluated) como valores detro dos arquivos .less.
+Isto &eacute; feito colocando a express&otilde;es entre crases:
 
-    @var: `"hello".toUpperCase() + '!'`;
+    @var: `'hello'.toUpperCase() + "!"`;
 
-Gera a saída:
+Gera a sa&iacute;da:
 
-    @var: "HELLO!";
+    @var: 'HELLO!';
 
-Também é possível usar interpolação e escaping com as strings:
+Tamb&eacute;m &eacute; poss&iacute;vel usar interpola&ccedil;&atilde;o e escaping com as strings:
 
-    @str: "hello";
-    @var: ~`"@{str}".toUpperCase() + '!'`;
+    @str: 'hello';
+    @var: ~`'@{str}'.toUpperCase() + "!"`;
 
-Gera a saída:
+Gera a sa&iacute;da:
 
     @var: HELLO!;
 
-É possível inclusive acessar o ambiente JavaScript:
+&Eacute; poss&iacute;vel inclusive acessar o ambiente JavaScript:
 
     @height: `document.body.clientHeight`;
 
-Se quisermos dar um parse em uma string JavaScript como uma cor hexadecimal, podemos utilizar a função `color`:
+Se quisermos dar um parse em uma string JavaScript como uma cor hexadecimal, podemos utilizar a fun&ccedil;&atilde;o `color`:
 
     @color: color(`window.colors.baseColor`);
     @darkcolor: darken(@color, 10%);

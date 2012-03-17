@@ -1,8 +1,8 @@
-Variáveis
+Vari&aacute;veis
 ---------
 
-Variáveis permitem que você especifique valores amplamente utilizados em apenas um local, possibilitando assim reutilizá-las por toda sua folha de estilos,
-realizando mudanças globais de maneira tão fácil como alterar apenas uma linha de código.
+Vari&aacute;veis permitem que voc&ecirc; especifique valores amplamente utilizados em apenas um local, possibilitando assim reutiliz&aacute;-las por toda sua folha de estilos,
+realizando mudan&ccedil;as globais de maneira t&atilde;o f&aacute;cil como alterar apenas uma linha de c&oacute;digo.
 
 <table class="code-example" cellpadding="0">
   <tr><td>
@@ -32,9 +32,9 @@ h2 {
 Mixins
 ------
 
-Mixins permitem que você adicione todas as propriedades de uma classe em outra classe
-simplesmente incluindo o nome da classe como uma de suas propriedades. Assim como variáveis,
-mas para classes completas. Mixins também podem se comportar com funções, e receber argumentos,
+Mixins permitem que voc&ecirc; adicione todas as propriedades de uma classe em outra classe
+simplesmente incluindo o nome da classe como uma de suas propriedades. Assim como vari&aacute;veis,
+mas para classes completas. Mixins tamb&eacute;m podem se comportar com fun&ccedil;&otilde;es, e receber argumentos,
 como mostrado no exemplo abaixo.
 
 <table class="code-example" cellpadding="0">
@@ -73,9 +73,9 @@ como mostrado no exemplo abaixo.
 Regras Aninhadas
 ----------------
 
-Ao invés de construir longos nomes de seletores para especificar herança,
-em Less você pode simplesmente aninhar seletores dentro de outros seletores.
-Isto faz com que a herança fique mais clara e as folhas de estilos menores.
+Ao inv&eacute;s de construir longos nomes de seletores para especificar heran&ccedil;a,
+em Less voc&ecirc; pode simplesmente aninhar seletores dentro de outros seletores.
+Isto faz com que a heran&ccedil;a fique mais clara e as folhas de estilos menores.
 
 <table class="code-example" cellpadding="0">
   <tr><td>
@@ -89,7 +89,7 @@ Isto faz com que a herança fique mais clara e as folhas de estilos menores.
   }
   p { font-size: 12px;
     a { text-decoration: none;
-      &:hover { border-width: 1px }
+      &amp;:hover { border-width: 1px }
     }
   }
 }
@@ -117,13 +117,13 @@ Isto faz com que a herança fique mais clara e as folhas de estilos menores.
   </td></tr>
 </table>
 		
-Funções & Operações
+Fun&ccedil;&otilde;es &amp; Opera&ccedil;&otilde;es
 -------------------
 
-Alguns elementos de sua folha de estilo são proporcionais a outros elementos?
-Operações permitem que você some, subtraia, divida e multiplique valores de propriedades e cores,
-dando a você o poder de criar relações complexas entre propriedades.
-Funções mapeam de um-para-um com código JavaScript, permitindo a você manipular valores
+Alguns elementos de sua folha de estilo s&atilde;o proporcionais a outros elementos?
+Opera&ccedil;&otilde;es permitem que voc&ecirc; some, subtraia, divida e multiplique valores de propriedades e cores,
+dando a voc&ecirc; o poder de criar rela&ccedil;&otilde;es complexas entre propriedades.
+Fun&ccedil;&otilde;es mapeam de um-para-um com c&oacute;digo JavaScript, permitindo a voc&ecirc; manipular valores
 como quiser.
 
 <table class="code-example" cellpadding="0">
