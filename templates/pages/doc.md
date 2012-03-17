@@ -210,10 +210,10 @@ execu&ccedil;&atilde;o condicional atrav&eacute;s de **guarded mixins** ao inv&e
 
 Vamos come&ccedil;ar com um exemplo:
 
-    .mixin (@a) when (lightness(@a) &gt;= 50%) {
+    .mixin (@a) when (lightness(@a) >= 50%) {
       background-color: black;
     }
-    .mixin (@a) when (lightness(@a) &lt; 50%) {
+    .mixin (@a) when (lightness(@a) < 50%) {
       background-color: white;
     }
     .mixin (@a) {
@@ -238,7 +238,7 @@ Isto &eacute; o que vamos obter:
       color: #555;
     }
 
-A lista completa de operadores de compara&ccedil;&atilde;o usadas nos guards s&atilde;o: **`&gt; &gt;= = =&lt; &lt;`**. Adicionalmente, a palavra reservada `true` &eacute; o &uacute;nico valor verdade em uma compara&ccedil;&atilde;o, fazendo esses dois mixins equivalentes:
+A lista completa de operadores de compara&ccedil;&atilde;o usadas nos guards s&atilde;o: **`> >= = =< <`**. Adicionalmente, a palavra reservada `true` &eacute; o &uacute;nico valor verdade em uma compara&ccedil;&atilde;o, fazendo esses dois mixins equivalentes:
 
     .truth (@a) when (@a) { ... }
     .truth (@a) when (@a = true) { ... }
@@ -251,7 +251,7 @@ Qualquer outro valor que n&atilde;o seja a palavra reservada `true` &eacute; fal
 
 Guards tamb&eacute;m pode ser separados por v&iacute;rgula "`,`"--se algum guard for avaliado como verdadeiro, ent&atilde;o &eacute; dado o match:
 
-    .mixin (@a) when (@a &gt; 10), (@a &lt; -10) { ... }
+    .mixin (@a) when (@a > 10), (@a < -10) { ... }
 
 Tamb&eacute;m &eacute; poss&iacute;vel comparar argumentos com outros argumentos, ou com n&atilde;o-argumentos:
 
@@ -260,8 +260,8 @@ Tamb&eacute;m &eacute; poss&iacute;vel comparar argumentos com outros argumentos
     .mixin (@a) when (@media = mobile) { ... }
     .mixin (@a) when (@media = desktop) { ... }
 
-    .max (@a, @b) when (@a &gt; @b) { width: @a }
-    .max (@a, @b) when (@a &lt; @b) { width: @b }
+    .max (@a, @b) when (@a > @b) { width: @a }
+    .max (@a, @b) when (@a < @b) { width: @b }
 
 E por &uacute;ltimo, se voc&ecirc; quiser dar match em mixins baseado em valores de tipos, &eacute; poss&iacute;vel usar as fun&ccedil;&otilde;es *is\**:
 
@@ -284,11 +284,11 @@ Se voc&ecirc; quiser checar se um valor, al&eacute;m de ser um n&uacute;mero, es
 
 Al&eacute;m disso tudo, ainda &eacute; poss&iacute;vel usar a palavra reservada **`and`** para condi&ccedil;&otilde;es adicionais dentro de um guard:
 
-    .mixin (@a) when (isnumber(@a)) and (@a &gt; 0) { ... }
+    .mixin (@a) when (isnumber(@a)) and (@a > 0) { ... }
 
 E a palavra reservada **`not`** para negar as condi&ccedil;&otilde;es:
 
-    .mixin (@b) when not (@b &gt; 0) { ... }
+    .mixin (@b) when not (@b > 0) { ... }
 
 Regras aninhadas
 ----------------
@@ -459,7 +459,7 @@ Agora se quisermos adicionar o classe `.button` do mixin ao nosso `#header a`, p
 
     #header a {
       color: orange;
-      #bundle &gt; .button;
+      #bundle > .button;
     }
 
 Escopo

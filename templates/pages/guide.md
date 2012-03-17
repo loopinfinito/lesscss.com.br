@@ -77,7 +77,7 @@ Less possui um bin&aacute;rio, que permite que voc&ecirc; chame o compilador dir
 
 Isto produzir&aacute; como sa&iacute;da o CSS compilado para `stdout`, voc&ecirc; pode ent&atilde;o redirecion&aacute;-lo para um arquivo a sua escolha:
 
-    $ lessc styles.less &gt; styles.css
+    $ lessc styles.less > styles.css
 
 Para produzir o CSS minificado (minified), apenas passe a op&ccedil;&atilde;o `-x`. Se voc&ecirc; quiser se envolver mais com o processo de minifica&ccedil;&atilde;o,
 o [YUI CSS Compressor](http://developer.yahoo.com/yui/compressor/css.html) tamb&eacute;m est&aacute; dispon&iacute;vel atrav&eacute;s da op&ccedil;&atilde;o `--yui-compress`.
