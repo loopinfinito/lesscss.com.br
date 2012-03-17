@@ -1,4 +1,4 @@
-Write some LESS:
+Escreva um pouco de LESS:
 
     @base: #f938ab;
 
@@ -16,7 +16,7 @@ Write some LESS:
       div { .box-shadow(0 0 5px, 30%) }
     }
 
-Include `less.js` with your styles:
+Inclua o `less.js` junto com seus estilos:
 
     <link rel="stylesheet/less" type="text/css" href="styles.less">
     <script src="less.js" type="text/javascript"></script>
