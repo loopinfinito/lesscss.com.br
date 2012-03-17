@@ -1,38 +1,37 @@
-Client-side usage
+Uso no lado do cliente
 =================
 
-Link your `.less` stylesheets with the `rel` set to "`stylesheet/less`":
+Vincule seus estilos `.less` com o atributo `rel` definido como "`stylesheet/less`":
 
     <link rel="stylesheet/less" type="text/css" href="styles.less">
 
-Then download `less.js` from the top of the page, and include it in the `<head>` element of your page, like so:
+Depois baixe o `less.js` no topo desta página, e o inclua no elemento `<head>` da sua página, desta forma:
 
     <script src="less.js" type="text/javascript"></script>
 
-Make sure you include your stylesheets *before* the script.
+Certifique-se de incluir suas folhas estilos *antes* do script.
 
-Watch mode
+Modo assistido
 ----------
 
-*Watch mode* is a client-side feature which enables your styles to refresh automatically as they are changed.
+*Modo assistido* é uma característica do lado do cliente que permite que seus estilos sejam automaticamente atualizados assim que forem alterados.
 
-To enable it, append '`#!watch`' to the browser URL, then refresh the page. Alternatively, you can
-run `less.watch()` from the console.
+Para ativá-la, acrescente '`#!watch`' na URL do navegador e depois atualize a página. Alternativamente, você pode rodar `less.watch()` diretamente do console.
 
-Server-side usage
+Uso no lado do servidor
 =================
 
-Installation
+Instalação
 ------------
 
-The easiest way to install LESS on the server, is via [npm](http://github.com/isaacs/npm), the node package manager, as so:
+A maneira mais fácil de instalar o LESS no servidor, é por [npm](http://github.com/isaacs/npm), o gerenciador de pacotes node, desta forma:
 
     $ npm install less
 
-Use
+Uso
 ---
 
-Once installed, you can invoke the compiler from node, as such:
+Uma vez instalado, você pode chamar o compilador pelo node, assim:
 
     var less = require('less');
     
@@ -40,13 +39,13 @@ Once installed, you can invoke the compiler from node, as such:
         console.log(css);
     });
 
-which will output
+que produzirá a saída
 
     .class {
       width: 2;
     }
 
-you may also manually invoke the parser and compiler:
+você também pode chamar o analisador e o compilador manualmente:
 
     var parser = new(less.Parser);
 
@@ -55,32 +54,31 @@ you may also manually invoke the parser and compiler:
         console.log(tree.toCSS());
     });
 
-Configuration
+Configuração
 -------------
 
-You may pass some options to the compiler:
+Você pode especificar algumas opções para o compilador:
 
     var parser = new(less.Parser)({
-        paths: ['.', './lib'], // Specify search paths for @import directives
-        filename: 'style.less' // Specify a filename, for better error messages
+        paths: ['.', './lib'], // Especifique caminhos de busca para as diretivas @import
+        filename: 'style.less' // Especifique um nome de arquivo, para mensagens de erros melhores
     });
 
     parser.parse('.class { width: 1 + 1 }', function (e, tree) {
-        tree.toCSS({ compress: true }); // Minify CSS output
+        tree.toCSS({ compress: true }); // Minificar (minify) a saída
     });
 
-Command-line usage
+Uso na linha de comando
 ------------------
 
-Less comes with a binary, which lets you invoke the compiler from the command-line, as such:
+Less possui um binário, que permite que você chame o compilador diretamente da linha de comando, assim:
 
     $ lessc styles.less
 
-This will output the compiled CSS to `stdout`, you may then redirect it to a file of your choice:
+Isto produzirá como saída o CSS compilado para `stdout`, você pode então redirecioná-lo para um arquivo a sua escolha:
 
     $ lessc styles.less > styles.css
 
-To output minified CSS, simply pass the `-x` option. If you would like more involved minification,
-the [YUI CSS Compressor](http://developer.yahoo.com/yui/compressor/css.html) is also available with
-the `--yui-compress` option.
+Para produzir o CSS minificado (minified), apenas passe a opção `-x`. Se você quiser se envolver mais com o processo de minificação,
+o [YUI CSS Compressor](http://developer.yahoo.com/yui/compressor/css.html) também está disponível através da opção `--yui-compress`.
 
