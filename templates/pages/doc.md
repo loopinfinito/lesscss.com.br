@@ -246,7 +246,7 @@ A lista completa de operadores de compara&ccedil;&atilde;o usadas nos guards s&a
 Qualquer outro valor que n&atilde;o seja a palavra reservada `true` &eacute; falso em uma compara&ccedil;&atilde;o:
 
     .class {
-      .truth(40); // Will not match any of the above definitions.
+      .truth(40); // Não irá dar match em nenhuma das definições acima.
     }
 
 Guards tamb&eacute;m pode ser separados por v&iacute;rgula "`,`"--se algum guard for avaliado como verdadeiro, ent&atilde;o &eacute; dado o match:
@@ -388,20 +388,20 @@ Func&otilde;es de cores
 LESS fornece uma variedade de fun&ccedil;&otilde;es que transformam cores. Cores s&atilde;o primeiramente convertidas para
 o formato *HSL*, e ent&atilde;o manipuladas a n&iacute;vel de canal:
 
-    lighten(@color, 10%);     // return a color which is 10% *lighter* than @color
-    darken(@color, 10%);      // return a color which is 10% *darker* than @color
+    lighten(@color, 10%);     // retorna uma cor que é 10% *mais clara* que @color
+    darken(@color, 10%);      // retorna uma cor que é 10% *mais escura* que @color
 
-    saturate(@color, 10%);    // return a color 10% *more* saturated than @color
-    desaturate(@color, 10%);  // return a color 10% *less* saturated than @color
+    saturate(@color, 10%);    // retorna uma cor 10% *mais* saturada que @color
+    desaturate(@color, 10%);  // retorna uma cor 10% *menos* saturada que @color
 
-    fadein(@color, 10%);      // return a color 10% *less* transparent than @color
-    fadeout(@color, 10%);     // return a color 10% *more* transparent than @color
-    fade(@color, 50%);        // return @color with 50% transparency
+    fadein(@color, 10%);      // retorna uma cor 10% *mais* transparente que @color
+    fadeout(@color, 10%);     // retorna uma cor 10% *more* transparente que @color
+    fade(@color, 50%);        // retorna @color com 50% de transparencia
 
-    spin(@color, 10);         // return a color with a 10 degree larger in hue than @color
-    spin(@color, -10);        // return a color with a 10 degree smaller hue than @color
+    spin(@color, 10);         // retorna uma cor com uma matiz (hue) 10 graus maior que @color
+    spin(@color, -10);        // retorna uma cor com uma matiz (hue) 10 graus menor que @color
 
-    mix(@color1, @color2);    // return a mix of @color1 and @color2
+    mix(@color1, @color2);    // retorna uma mistura entre a @color1 e @color2
 
 O uso das fun&ccedil;&otilde;es &eacute; bem simples:
 
@@ -414,10 +414,10 @@ O uso das fun&ccedil;&otilde;es &eacute; bem simples:
 
 Tamb&eacute;m &eacute; poss&iacute;vel extrair informa&ccedil;&atilde; das cores:
 
-    hue(@color);        // returns the `hue` channel of @color
-    saturation(@color); // returns the `saturation` channel of @color
-    lightness(@color);  // returns the "lightness" channel of @color
-    alpha(@color);      // returns the "alpha" channel of @color
+    hue(@color);        // retorna o canal `matiz` (hue) de @color
+    saturation(@color); // retorna o canal `saturação` (saturation) de @color
+    lightness(@color);  // retorna o canal `luminosidade` (lightness) de @color
+    alpha(@color);      // retorna o canal "alpha" de @color
 
 Isto &eacute; &uacute;til se quisermos criar uma nova cor baseada em um canal de uma outra cor, por exemplo:
 
@@ -430,13 +430,13 @@ Fun&ccedil;&otilde;es Matem&aacute;ticas
 
 LESS fornece algumas fun&ccedil;&otilde;es matem&aacute;ticas bastante &uacute;teis que podemos usar com valores:
 
-    round(1.67); // returns `2`
-    ceil(2.4);   // returns `3`
-    floor(2.6);  // returns `2`
+    round(1.67); // retorna `2`
+    ceil(2.4);   // retorna `3`
+    floor(2.6);  // retorna `2`
 
 Se precisarmos transformar um valor em uma porcentagem, poder fazer isso com a fun&ccedil;&atilde;o `percentage`:
 
-    percentage(0.5); // returns `50%`
+    percentage(0.5); // retorna `50%`
 
 Namespaces
 ----------
@@ -485,13 +485,13 @@ Coment&aacute;rios
 
 Coment&aacute;rios seguindo o padr&atilde;o CSS s&atilde;o preservados em LESS:
 
-    /* Hello, I"m a CSS-style comment */
+    /* Olá, sou um comentário no estilo CSS */
     .class { color: black }
 
 Coment&aacute;rio de uma linha tamb&eacute;m s&atilde;o v&aacute;lidos no LESS, mas s&atilde;o "silenciosos",
 eles n&atilde;o aparecem no CSS compilado:
 
-    // Hi, I"m a silent comment, I won"t show up in your CSS
+    // Opa, sou um comentário do tipo silencioso e não vou aparecer no CSS final
     .class { color: white }
 
 Importa&ccedil;&atilde;o
