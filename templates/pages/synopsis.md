@@ -6,8 +6,7 @@ realizando mudan&ccedil;as globais de maneira t&atilde;o f&aacute;cil como alter
 
 <table class="code-example" cellpadding="0">
   <tr><td>
-  <pre class="less-example">
-  <code>// LESS
+  <pre class="less-example"><code>// LESS
 
 @color: #4D926F;
 
