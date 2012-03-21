@@ -29,14 +29,14 @@ Na verdade as vari&aacute;veis em LESS s&atilde;o "constantes", pois elas s&oacu
 Mixins
 ------
 
-Em LESS, &eacute; poss&iacute;vel incluir v&aacute;rias propriedades de um grupo de regras (ruleset) em um outro grupo de regras. Digamos que n&oacute;s temos a seguinte classe:
+Em LESS, &eacute; poss&iacute;vel incluir v&aacute;rias propriedades de um grupo de regras (ruleset) em um outro grupo de regras. Digamos que temos a seguinte classe:
 
     .bordered {
       border-top: dotted 1px black;
       border-bottom: solid 2px black;
     }
 
-E n&oacute;s queremos usar essas propriedades dentro de outros grupos de regras. N&oacute;s apenas temos que por o nome da classe dentro de qualquer grupo de regras que desejamos utilizar estas propriedades, como no exemplo:
+E queremos usar estas propriedades dentro de outros grupos de regras. Apenas temos que por o nome da classe dentro de qualquer grupo de regras que desejamos utilizar estas propriedades, como no exemplo:
 
     #menu a {
       color: #111;
@@ -150,7 +150,7 @@ Vamos come&ccedil;ar com algo b&aacute;sico
     }
 
 Agora digamos que n&oacute;s queremos que `.mixin` tenha um comportamento diferente, baseado no valor de `@switch`.
-N&oacute;s poderiamos definir `.mixin` como:
+Ent&atilde;o poder&iacute;amos definir `.mixin` como:
 
     .mixin (dark, @color) {
       color: darken(@color, 10%);
@@ -239,7 +239,7 @@ Isto &eacute; o que vamos obter:
       color: #555;
     }
 
-A lista completa de operadores de compara&ccedil;&atilde;o usadas nos guards s&atilde;o: **`> >= = =< <`**. Adicionalmente, a palavra reservada `true` &eacute; o &uacute;nico valor verdade em uma compara&ccedil;&atilde;o, fazendo esses dois mixins equivalentes:
+A lista completa de operadores de compara&ccedil;&atilde;o usadas nos guards &eacute;: **`> >= = =< <`**. Adicionalmente, a palavra reservada `true` &eacute; o &uacute;nico valor verdade em uma compara&ccedil;&atilde;o, fazendo esses dois mixins equivalentes:
 
     .truth (@a) when (@a) { ... }
     .truth (@a) when (@a = true) { ... }
@@ -250,7 +250,7 @@ Qualquer outro valor que n&atilde;o seja a palavra reservada `true` &eacute; fal
       .truth(40); // N&atilde;o ir&aacute; dar match em nenhuma das defini&ccedil;&otilde;es acima.
     }
 
-Guards tamb&eacute;m pode ser separados por v&iacute;rgula "`,`"--se algum guard for avaliado como verdadeiro, ent&atilde;o &eacute; dado o match:
+Guards tamb&eacute;m pode ser separados por v&iacute;rgula "`,`" -- se algum guard for avaliado como verdadeiro, ent&atilde;o &eacute; dado o match:
 
     .mixin (@a) when (@a > 10), (@a < -10) { ... }
 
@@ -333,7 +333,7 @@ Ou desta outra maneira:
 
 O c&oacute;digo resultante &eacute; mais conciso, e mimica a estrutura da sua `&aacute;rvore DOM`.
 
-Perceba o combinador `&`--ele &eacute; usado quando queremos usar um seletor aninhado concatenado aos seu seletor pai, ao contr&aacute;rio de atuar como um descendente.
+Perceba o combinador `&` -- ele &eacute; usado quando queremos usar um seletor aninhado concatenado aos seu seletor pai, ao contr&aacute;rio de atuar como um descendente.
 Isto &eacute; muito importante para pseudo-classes como `:hover` e `:focus`.
 
 Por exemplo:
@@ -369,11 +369,11 @@ Qualquer n&uacute;mero, cor ou vari&aacute;vel pode ser usado em opera&ccedil;&o
     background-color: @base-color + #111;
     height: 100% / 2 + @filler;
 
-A sa&iacute;da &eacute; basicamente o que se espera-LESS entende a diferen&ccedil;a entre cores e unidade. Se uma unidade &eacute; usada em uma opera&ccedil;&atilde;o, como em:
+A sa&iacute;da &eacute; basicamente o que se espera -- LESS entende a diferen&ccedil;a entre cores e unidade. Se uma unidade &eacute; usada em uma opera&ccedil;&atilde;o, como em:
 
     @var: 1px + 5;
 
-LESS ir&aacute; usar esta unidade para a sa&iacute;da final-`6px` neste caso.
+LESS ir&aacute; usar esta unidade para a sa&iacute;da final -- `6px` neste caso.
 
 Par&ecirc;nteses tamb&eacute;m s&atilde;o permitidos nessas opera&ccedil;&otilde;es:
 
@@ -413,7 +413,7 @@ O uso das fun&ccedil;&otilde;es &eacute; bem simples:
       background-color: lighten(spin(@base, 8), 25%);
     }
 
-Tamb&eacute;m &eacute; poss&iacute;vel extrair informa&ccedil;&atilde; das cores:
+Tamb&eacute;m &eacute; poss&iacute;vel extrair informa&ccedil;&atilde;o das cores:
 
     hue(@color);        // retorna o canal `matiz` (hue) de @color
     saturation(@color); // retorna o canal `satura&ccedil;&atilde;o` (saturation) de @color
@@ -435,7 +435,7 @@ LESS fornece algumas fun&ccedil;&otilde;es matem&aacute;ticas bastante &uacute;t
     ceil(2.4);   // retorna `3`
     floor(2.6);  // retorna `2`
 
-Se precisarmos transformar um valor em uma porcentagem, poder fazer isso com a fun&ccedil;&atilde;o `percentage`:
+Se precisarmos transformar um valor em uma porcentagem, podemos fazer isso com a fun&ccedil;&atilde;o `percentage`:
 
     percentage(0.5); // retorna `50%`
 
@@ -443,7 +443,7 @@ Namespaces
 ----------
 
 Algumas vezes, queremos agrupar nossas vari&aacute;veis e mixins, por motivos de organiza&ccedil;&atilde;o, ou apenas para oferecer encapsulamento.
-Podemos fazer isso de forma intuitiva em LESS-digamos que queremos criar um pacote com alguns mixins e vari&aacute;veis com o nome `#bundle`, para reuso posterior ou para distribui&ccedil;&atilde;o:
+Podemos fazer isso de forma intuitiva em LESS -- digamos que queremos criar um pacote com alguns mixins e vari&aacute;veis com o nome `#bundle`, para reuso posterior ou para distribui&ccedil;&atilde;o:
 
     #bundle {
       .button () {
@@ -466,7 +466,7 @@ Agora se quisermos adicionar o classe `.button` do mixin ao nosso `#header a`, p
 Escopo
 ------
 
-Escopo em LESS &eacute; muito semelhante ao de linguagens de programa&ccedil;&atilde;o. Vari&aacute;veis e mixins s&atilde;o primeiro procurados localmente, e caso n&atilde;o sejam encontrados, o compilador ir&aacute; procurar no escopo pai, e assim por diante.
+Escopo em LESS &eacute; muito semelhante aos de linguagens de programa&ccedil;&atilde;o. Vari&aacute;veis e mixins s&atilde;o primeiramente procurados localmente, e caso n&atilde;o sejam encontrados, o compilador ir&aacute; procurar no escopo pai, e assim por diante.
 
     @var: red;
 
@@ -498,7 +498,7 @@ eles n&atilde;o aparecem no CSS compilado:
 Importa&ccedil;&atilde;o
 ----------
 
-Podemos importar arquivos `.less`, e todas as vari&aacute;veis e mixins nestes estar&atilde;o dispon&iacute;veis no arquivo principal.
+Podemos tamb&eacute;m importar arquivos `.less`, e todas as vari&aacute;veis e mixins inclu&iacute;dos nestes arquivos estar&atilde;o dispon&iacute;veis no arquivo principal.
 A extens&atilde;o `.less` &eacute; opcional, ent&atilde;o ambas as regras s&atilde;o v&aacute;lidas:
 
     @import 'lib.less';
@@ -507,7 +507,7 @@ A extens&atilde;o `.less` &eacute; opcional, ent&atilde;o ambas as regras s&atil
 Se quisermos importar um arquivo CSS, e n&atilde;o quisermos que LESS processe ele, apenas usamos a extens&atilde;o `.css`:
 
     @import 'lib.css';
-A diretiva ir&aacute; ficar como est&aacute;, e acabar&aacute; como uma sa&iacute;da CSS.
+A diretiva ficar&aacute; como est&aacute;, e acabar&aacute; como uma sa&iacute;da CSS.
 
 Interpola&ccedil;&atilde;o de strings
 -----------------------
@@ -529,7 +529,7 @@ Para gerar a sa&iacute;da de tal valor, o colocamos dentro de uma string come&cc
       filter: ~'ms:alwaysHasItsOwnSyntax.For.Stuff()';
     }
 
-Isto &eacute; chamado de 'escaped valur', que ir&aacute; resultar em:
+Isto &eacute; chamado de 'escaped value', que ir&aacute; resultar em:
 
     .class {
       filter: ms:alwaysHasItsOwnSyntax.For.Stuff();
@@ -538,7 +538,7 @@ Isto &eacute; chamado de 'escaped valur', que ir&aacute; resultar em:
 Avalia&ccedil;&atilde;o (evaluation) de JavaScript
 ------------------------------------
 
-Express&otilde;es JavaScript podem ser avaliadas (evaluate) como valores detro dos arquivos .less.
+Express&otilde;es JavaScript podem ser avaliadas (evaluate) como valores dentro dos arquivos .less.
 Isto &eacute; feito colocando a express&otilde;es entre crases:
 
     @var: `'hello'.toUpperCase() + "!"`;
