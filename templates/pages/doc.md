@@ -318,7 +318,7 @@ Em LESS, n&oacute;s tamb&eacute;m podemos escrever da seguinte maneira:
       }
       .logo {
         width: 300px;
-        &amp;:hover { text-decoration: none }
+        &:hover { text-decoration: none }
       }
     }
 
@@ -327,11 +327,11 @@ Ou desta outra maneira:
     #header        { color: black;
       .navigation  { font-size: 12px }
       .logo        { width: 300px;
-        &amp;:hover    { text-decoration: none }
+        &:hover    { text-decoration: none }
       }
     }
 
-O c&oacute;digo resultante &eacute; mais conciso, e mimica a estrutura da sua `&aacute;rvore DOM`.
+O c&oacute;digo resultante &eacute; mais conciso, e mimica a estrutura da sua `árvore DOM`.
 
 Perceba o combinador `&` -- ele &eacute; usado quando queremos usar um seletor aninhado concatenado aos seu seletor pai, ao contr&aacute;rio de atuar como um descendente.
 Isto &eacute; muito importante para pseudo-classes como `:hover` e `:focus`.
@@ -339,7 +339,7 @@ Isto &eacute; muito importante para pseudo-classes como `:hover` e `:focus`.
 Por exemplo:
 
     .bordered {
-      &amp;.float {
+      &.float {
         float: left;
       }
       .top {
@@ -450,7 +450,7 @@ Podemos fazer isso de forma intuitiva em LESS -- digamos que queremos criar um p
         display: block;
         border: 1px solid black;
         background-color: grey;
-        &amp;:hover { background-color: white }
+        &:hover { background-color: white }
       }
       .tab { ... }
       .citation { ... }

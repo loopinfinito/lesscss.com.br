@@ -65,7 +65,7 @@ Voc&ecirc; pode especificar algumas op&ccedil;&otilde;es para o compilador:
     });
 
     parser.parse(".class { width: 1 + 1 }", function (e, tree) {
-        tree.toCSS({ compress: true }); // Minificar (minify) a sa&iacute;da
+        tree.toCSS({ compress: true }); // Minificar (minify) a saida
     });
 
 Uso na linha de comando
