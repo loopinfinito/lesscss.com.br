@@ -27,7 +27,7 @@ h2 {
 }</code></pre></td>
   </tr>
 </table>
-		
+
 Mixins
 ------
 
@@ -115,7 +115,7 @@ Isto faz com que a heran&ccedil;a fique mais clara e as folhas de estilos menore
 </code></pre>
   </td></tr>
 </table>
-		
+
 Fun&ccedil;&otilde;es &amp; Opera&ccedil;&otilde;es
 -------------------
 
@@ -139,7 +139,7 @@ como quiser.
   border-left: @the-border;
   border-right: @the-border * 2;
 }
-#footer { 
+#footer {
   color: @base-color + #003300;
   border-color: desaturate(@red, 10%);
 }
@@ -154,7 +154,7 @@ como quiser.
   border-left: 1px;
   border-right: 2px;
 }
-#footer { 
+#footer {
   color: #114411;
   border-color: #7d2717;
 }
